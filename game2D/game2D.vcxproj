@@ -152,14 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Class.cpp" />
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Src\main.cpp" />
-    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Src\Player.cpp" />
+    <ClCompile Include="Src\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Class.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Timer.h" />
+    <ClInclude Include="Src\Player.h" />
+    <ClInclude Include="Src\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
