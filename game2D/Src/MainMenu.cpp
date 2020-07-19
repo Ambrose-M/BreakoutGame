@@ -22,12 +22,14 @@ MainMenu::MainMenu(SDL_Renderer* renderer) : Entity(renderer)
 
 MainMenu::~MainMenu()
 {
+    //Destroy all textures
 	SDL_DestroyTexture(background);
     SDL_DestroyTexture(startButton);
 }
 
 bool MainMenu::startButtonPressed(SDL_Event* e)
 {
+    //Indicates if user pressed the start button
     bool pressStart = false;
 
     //If mouse event happened
@@ -37,12 +39,12 @@ bool MainMenu::startButtonPressed(SDL_Event* e)
         int x, y;
         SDL_GetMouseState(&x, &y);
 
-        //Check if mouse is on start button
+        //Check if mouse is on start button. If it is set pressStart to true.
         if (x >= 200 && x <= 600 && y >= 50 && y <= 150) {
             pressStart = true;
         }
     }
-
+    //Returns true if start button was pressed
     return pressStart;
 }
 
@@ -59,7 +61,10 @@ void MainMenu::Render() {
 
 bool MainMenu::Run()
 {
+    //True if user clicks to exit game, false if not.
     bool exitGame = false;
+
+    //True if user clicked start button, false if not.
     bool startPressed = false;
 
     // Main loop, while start is not clicked.
@@ -68,6 +73,7 @@ bool MainMenu::Run()
         // Handle events
         SDL_Event e;
         if (SDL_PollEvent(&e)) {
+            //If user clicks close window set exitGame to true and exit loop.
             if (e.type == SDL_QUIT) {
                 exitGame = true;
                 break;
