@@ -26,6 +26,7 @@ GameOverMenu::GameOverMenu(SDL_Renderer* renderer) : Entity(renderer)
 
 GameOverMenu::~GameOverMenu()
 {
+    //Destroy all textures
     SDL_DestroyTexture(background);
     SDL_DestroyTexture(yesButton);
     SDL_DestroyTexture(noButton);
@@ -51,6 +52,7 @@ void GameOverMenu::Render()
 
 string GameOverMenu::buttonPressed(SDL_Event* e)
 {
+    //String that holds which button is clicked
     string playAgain = "";
 
     //If mouse event happened
@@ -73,11 +75,13 @@ string GameOverMenu::buttonPressed(SDL_Event* e)
         }
     }
 
+    //Return string indicating which button was clicked
     return playAgain;
 }
 
 string GameOverMenu::Run()
 {
+    //Hold yes or no depending on whether player clicks to play again or not
     string playAgain = "";
 
     // Main loop, while start button is not clicked.
@@ -86,7 +90,7 @@ string GameOverMenu::Run()
         SDL_Event e;
 
         if (SDL_PollEvent(&e)) {
-            //If user closes main window exit the game
+            //If user closes main window exit the game and set playAgain to 'no'
             if (e.type == SDL_QUIT) {
                 playAgain = "no";
                 break;
@@ -103,7 +107,7 @@ string GameOverMenu::Run()
         //Check if start button is pressed
        playAgain = this->buttonPressed(&e);
 
-       //If either button is clicked break from main loop
+       //If either button is clicked break from main loop and set playAgain string
        if (playAgain.compare("yes") == 0)
            break;
        else if (playAgain.compare("no") == 0)
