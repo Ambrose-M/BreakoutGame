@@ -21,6 +21,7 @@ Lives::Lives(SDL_Renderer* renderer) :Entity(renderer)
 
 Lives::~Lives()
 {
+    //Destroy heart texture
     SDL_DestroyTexture(texture);
 }
 
@@ -39,15 +40,18 @@ void Lives::Render()
 
 void Lives::LoseLife()
 {
+    //Reduce number of lives by 1
     livesLeft = livesLeft - 1;
 }
 
 int Lives::GetLivesLeft()
 {
+    //Return the number of lives the player currently has
     return livesLeft;
 }
 
 void Lives::ResetLives()
 {
+    //Set number of lives back to the max
     livesLeft = 3;
 }
