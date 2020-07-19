@@ -14,9 +14,16 @@ Board::Board(SDL_Renderer* renderer) : Entity(renderer) {
     //For setting random colored bricks on board
     srand(time(0));
 
+    //brick x coordinate
     x = 16;
+
+    //brick y coordinate
     y = 0;
+
+    //Board width
     width = 768;
+
+    //Board height
     height = 600;
 
     //Offset of bricks on x and y axis
@@ -25,6 +32,7 @@ Board::Board(SDL_Renderer* renderer) : Entity(renderer) {
 }
 
 Board::~Board() {
+    //Destory all textures
     SDL_DestroyTexture(bricktexture);
     SDL_DestroyTexture(sidetexture);
 }
@@ -54,6 +62,7 @@ void Board::Render(float delta) {
             destRect.w = BOARD_BRWIDTH;
             destRect.h = BOARD_BRHEIGHT;
 
+            //Render brick
             SDL_RenderCopy(renderer, bricktexture, &srcrect, &destRect);
         }
     }
@@ -68,7 +77,7 @@ void Board::Render(float delta) {
 }
 
 void Board::CreateLevel() {
-
+    //Traverse through 2D array
     for (int i = 0; i < BOARD_WIDTH; i++) {
         for (int j = 0; j < BOARD_HEIGHT; j++) {
             Brick brick;
