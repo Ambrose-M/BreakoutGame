@@ -4,7 +4,7 @@
 
 class Entity {
 public:
-    //Initilizes entity's variables and renderer
+    //Initilizes entity's variables
     Entity(SDL_Renderer* renderer);
     virtual ~Entity();
 
