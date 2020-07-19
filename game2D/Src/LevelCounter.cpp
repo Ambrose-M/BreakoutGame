@@ -18,23 +18,24 @@ LevelCounter::LevelCounter(SDL_Renderer* renderer) : Entity(renderer)
 	//Setting color to white
 	SDL_Color color = { 255, 255, 255 };
 
+	//String that will be displayed on string
 	levelStr = "level " + to_string(currentLevel);
 
-	//Creating text surface
-	//SDL_Surface* surface = TTF_RenderText_Solid(font, levelStr.c_str(), color);
-
+	//Creating text surface with levelStr
 	surface = TTF_RenderText_Solid(font,
 		levelStr.c_str(), color);
 
 	//Initilizing texture from surface
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 	SDL_FreeSurface(surface);
-
 }
 
 LevelCounter::~LevelCounter()
 {
+	//Destroy texture
 	SDL_DestroyTexture(texture);
+
+	//Close font
 	TTF_CloseFont(font);
 	font = NULL;
 }
@@ -50,15 +51,19 @@ void LevelCounter::Render()
 
 void LevelCounter::LevelUp()
 {
+	//Increase current level by 1
 	currentLevel++;
 
+	//Update text displayed with new level
 	UpdateText();
 }
 
 void LevelCounter::ResetLevel()
 {
+	//Set current level back to 1
 	currentLevel = 1;
 
+	//Update text displayed with new level
 	UpdateText();
 }
 
@@ -77,5 +82,4 @@ void LevelCounter::UpdateText()
 	//Initilizing texture from surface
 	texture = SDL_CreateTextureFromSurface(renderer, temp);
 	SDL_FreeSurface(temp);
-
 }
