@@ -12,6 +12,7 @@ Game::~Game() {
 }
 
 bool Game::Init() {
+    //Initilize SDL library
     SDL_Init(SDL_INIT_VIDEO);
 
     //Initilize SDL_ttf for text rendering
@@ -60,7 +61,7 @@ bool Game::DisplayMainMenu() {
 
     MainMenu mainMenu(renderer);
 
-    //Runs main menu 
+    //Runs main menu. Returns true if player wants to exit game, false if not. 
     bool exitGame = mainMenu.Run();
 
     return exitGame;
@@ -68,10 +69,12 @@ bool Game::DisplayMainMenu() {
 
 string Game::DisplayGameOverMenu()
 {
+    //Holds string indicating if player wants to play again
     string playAgain = "";
 
     GameOverMenu gameoverMenu(renderer);
 
+    //Runs game over menu. Returns 'yes' or 'no' to playAgain.
     playAgain = gameoverMenu.Run();
 
     return playAgain;
@@ -192,8 +195,10 @@ void Game::NextLevel() {
     paddlestick = true;
     paddle->StickBall(ball);
 
+    //Increase speed of ball
     ball->IncreaseSpeed();
 
+    //Display next level number on screen
     levelCounter->LevelUp();
 }
 
@@ -201,6 +206,7 @@ void Game::NextLevel() {
 void Game::Render(float delta) {
     SDL_RenderClear(renderer);
 
+    //Render entities
     board->Render(delta);
     paddle->Render(delta);
     ball->Render(delta);
@@ -305,10 +311,11 @@ void Game::CheckBoardCollisions() {
 
 //Delete resources
 void Game::Clean() {
+    //Delete collision object
     delete collision;
 
+    //Destroy SDL resources
     SDL_DestroyTexture(texture);
-
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 }

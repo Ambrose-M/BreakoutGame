@@ -18,30 +18,37 @@
 
 using namespace std;
 
-#define FPS_DELAY 500
-
 class Game {
 public:
+    //Sets window and renderer to 0
     Game();
+
     ~Game();
 
+    //Initilizes game window, renderer, texture and variables
     bool Init();
+
+    //Runs game
     void Run();
 
+    //Displays main menu to screen
     bool DisplayMainMenu(); 
+
+    //Displays game over menu
     string DisplayGameOverMenu();
 
 private:
+    //Game window
     SDL_Window* window;
+
+    //Renders textures
     SDL_Renderer* renderer;
 
+    //Textures for rendering
     SDL_Texture* texture;
 
     //For timing
     unsigned int lasttick, fpstick, fps, framecount;
-
-    ////For testing
-    //float testx, testy;
 
     //Entities
     Board* board;
@@ -50,16 +57,27 @@ private:
     Lives* lives;
     LevelCounter* levelCounter;
 
-    bool paddlestick; //true if ball is stuck to paddle
+    //True if ball is stuck to paddle
+    bool paddlestick; 
 
+    //Cleans object's resources
     void Clean();
+
+    //Updates entities
     void Update(float delta);
+
+    //Renders entities
     void Render(float delta);
 
+    //Creates new game
     void NewGame();
+
+    //Brings game to next level
     void NextLevel();
 
+    //Sets paddle x coordinate
     void SetPaddleX(float x);
 
+    //Check for board collisions
     void CheckBoardCollisions();
 };
