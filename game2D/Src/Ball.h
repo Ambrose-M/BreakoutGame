@@ -5,7 +5,7 @@
 
 class Ball : public Entity {
 public:
-    //Initilizes texture, renderer, and varaibles
+    //Initilizes texture and varaibles
     Ball(SDL_Renderer* renderer);
 
     //Delete's object's resources
