@@ -11,7 +11,7 @@ public:
     //Delete's object's resources
     ~Ball();
 
-    //
+    //Updates direction of ball's movement
     void Update(float delta);
 
     //Renders ball to screen
@@ -33,5 +33,6 @@ public:
     float dirX, dirY;
 
 private:
+    //Texture used for rendering ball image
     SDL_Texture* texture;
 };
