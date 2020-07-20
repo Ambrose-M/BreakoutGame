@@ -4,7 +4,7 @@ This is a Breakout style game where the paddle is controlled by the mouse. Click
 
 After breaking all the bricks, the board is reset and the speed of the ball is increased with each level. Each player has three lives.
 
-Configuration instrustions for Windows Visual Studio are after the screenshots.
+**Configuration instructions for Windows Visual Studio are after the screenshots.**
 
 <img src="https://github.com/Ambrose-M/BreakoutGame/blob/master/game2D/Images/forReadMe/OpeningScreen.PNG" alt="oScreen"
 	title="Opening Screen" width="400" height="400" />     <img src="https://github.com/Ambrose-M/BreakoutGame/blob/master/game2D/Images/forReadMe/Level1.png" alt="Level1"
