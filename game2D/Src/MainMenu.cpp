@@ -40,7 +40,7 @@ bool MainMenu::startButtonPressed(SDL_Event* e)
         SDL_GetMouseState(&x, &y);
 
         //Check if mouse is on start button. If it is set pressStart to true.
-        if (x >= 200 && x <= 600 && y >= 50 && y <= 150) {
+        if (x >= 100 && x <= 700 && y >= 50 && y <= 600) {
             pressStart = true;
         }
     }
