@@ -11,12 +11,12 @@ Configuration instrustions for Windows Visual Studio are after the screenshots.
 	title="Level 1" width="400" height="400" />     <img src="https://github.com/Ambrose-M/BreakoutGame/blob/master/game2D/Images/forReadMe/GameOverScreen.PNG" alt="GameOver"
 	title="Game Over Screen" width="400" height="400" />
 
-This game uses three Simple DirectMedia Layer development libraries: SDL2, SDL_image, and SDL_ttf. Download their zips under the Development Libraries title in the links below:
+This game uses three Simple DirectMedia Layer development libraries: SDL2, SDL_image, and SDL_ttf. Download their zips under the Development Libraries title in these links:
 
 * https://www.libsdl.org/download-2.0.php
 * https://www.libsdl.org/projects/SDL_image/
 * https://www.libsdl.org/projects/SDL_ttf/
 
-After uploading BreakoutGame to Visual Studio, follow this tutorial to setup each of these libraries in the VS project:
+After uploading BreakoutGame to Visual Studio, follow the tutorial below to setup SDL2 in the VS project. Repeat this process for the SDL_image and SDL_tff libraries. Setting up SDL2 alone does not automatically include them.
 
 https://www.youtube.com/watch?v=Sfn7yOiwJLw&list=LL7ZRWZ_-kR0nmcBUI1ULz2w&index=10&t=338s
