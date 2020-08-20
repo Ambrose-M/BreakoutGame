@@ -1,6 +1,6 @@
-# BreakoutGame
+# Brick Breaker Game
 
-This is a Breakout style game where the paddle is controlled by the mouse. Click the mouse to release the ball from the paddle and start the game. 
+This is a brick breaker game where the paddle is controlled by the mouse. Click the mouse to release the ball from the paddle and start the game. 
 
 After breaking all the bricks, the board is reset and the speed of the ball is increased with each level. Each player has three lives.
 
